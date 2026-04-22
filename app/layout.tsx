@@ -1,39 +1,30 @@
-import type { Metadata } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import type { Metadata } from "next";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' });
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: 'Ruang Code | Jasa Pembuatan Website Profesional & Elegan',
-  description: 'Spesialis jasa pembuatan website untuk bisnis, organisasi, UMKM, dan instansi. Dapatkan website premium dengan gratis hosting, domain, dan garansi selamanya.',
-  keywords: ['jasa pembuatan website', 'bikin web murah', 'web developer profesional', 'jasa web perusahaan', 'Ruang Code'],
-  authors: [{ name: 'Ruang Code Team' }],
-  openGraph: {
-    title: 'Ruang Code | Jasa Pembuatan Website Profesional',
-    description: 'Wujudkan website impian bisnis Anda bersama Ruang Code.',
-    url: 'https://ruangcode.com',
-    siteName: 'Ruang Code',
-    locale: 'id_ID',
-    type: 'website',
-  },
+  title: "Ruang Code | Jasa Pembuatan Website Profesional",
+  description: "Spesialis jasa pembuatan website untuk bisnis, organisasi, UMKM, dan instansi.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" className="scroll-smooth">
-      <body className={`${jakarta.variable} ${inter.variable} font-sans bg-slate-50 text-slate-900 antialiased flex flex-col min-h-screen`}>
+      <body className={`${jakarta.variable} ${inter.variable} font-sans text-slate-900 antialiased flex flex-col min-h-screen relative`}>
+        {/* --- BACKGROUND GARIS-GARIS (GRID) FULL SCREEN --- */}
+        <div className="fixed inset-0 z-[-1] h-full w-full bg-white bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem]">
+          {/* Efek cahaya (Glow) biru di bagian atas tengah */}
+          <div className="absolute top-0 left-0 right-0 h-[600px] bg-[radial-gradient(circle_500px_at_50%_0px,#eff6ff,transparent)]"></div>
+        </div>
+        {/* ------------------------------------------------ */}
+
         <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
