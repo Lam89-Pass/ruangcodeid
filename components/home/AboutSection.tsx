@@ -9,7 +9,6 @@ export default function AboutSection() {
     { title: "Garansi Selamanya", desc: "Dukungan teknis penuh tanpa batas waktu tambahan." },
   ];
 
-  // Daftar teknologi terbaru sesuai request (menggunakan CDN logo Devicon agar tajam)
   const technologies = [
     { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
     { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
@@ -24,12 +23,9 @@ export default function AboutSection() {
   return (
     <section id="about" className="relative pt-0 pb-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        {/* GRID UTAMA: LAYANAN (KIRI) & ABOUT (KANAN) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-20">
-          {/* SISI KIRI: KENAPA HARUS PILIH LAYANAN KAMI */}
           <div className="space-y-10 order-2 lg:order-1">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-1.5 bg-blue-50/80 backdrop-blur-sm text-blue-600 font-bold text-xs tracking-widest uppercase rounded-full border border-blue-100">Layanan Kami</div>
               <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
                 Kenapa Harus Memilih <br />
                 <span className="text-blue-600">Layanan Ruang Code?</span>
@@ -52,7 +48,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* DUAL CS BUTTON DI BAWAH LAYANAN */}
             <div className="space-y-4 pt-4 border-t border-slate-100">
               <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Konsultasi Gratis Sekarang:</p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -74,10 +69,8 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* SISI KANAN: ABOUT US */}
           <div className="space-y-8 order-1 lg:order-2">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-1.5 bg-slate-100/80 backdrop-blur-sm text-slate-600 font-bold text-xs tracking-widest uppercase rounded-full border border-slate-200">About Ruang Code</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
                 Misi Kami Membangun <br />
                 <span className="text-blue-600">Kualitas Digital.</span>
@@ -90,24 +83,50 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* BAGIAN TEKNOLOGI (GAYA MEDIA PARTNER) */}
-        <div className="pt-16 border-t border-slate-200/60">
+        <div className="pt-16 border-t border-slate-200/60 relative">
           <div className="text-center mb-10">
             <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em]">Teknologi yang Kami Gunakan</p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 hover:opacity-100 transition-opacity duration-500">
-            {technologies.map((tech, index) => (
-              <div key={index} className="group flex flex-col items-center gap-3">
-                <img
-                  src={tech.logo}
-                  alt={tech.name}
-                  /* Filter grayscale agar terlihat abu-abu, lalu berwarna saat dihover */
-                  className="h-10 md:h-12 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"
-                />
-                <span className="text-[10px] font-bold text-slate-400 group-hover:text-blue-600 uppercase tracking-tighter transition-colors">{tech.name}</span>
-              </div>
-            ))}
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+            @keyframes scroll-left {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-100%); }
+            }
+            .animate-scroll {
+              animation: scroll-left 25s linear infinite;
+            }
+            /* Berhenti bergeser saat di-hover/disentuh */
+            .pause-on-hover:hover .animate-scroll {
+              animation-play-state: paused;
+            }
+          `,
+            }}
+          />
+
+          <div className="relative flex overflow-hidden w-full pause-on-hover group">
+            <div className="absolute top-0 left-0 w-20 md:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="flex shrink-0 animate-scroll items-center gap-10 md:gap-20 pr-10 md:pr-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+              {technologies.map((tech, index) => (
+                <div key={`tech-1-${index}`} className="flex flex-col items-center gap-3 w-20 md:w-24">
+                  <img src={tech.logo} alt={tech.name} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 drop-shadow-sm cursor-pointer" />
+                  <span className="text-[10px] font-bold text-slate-400 hover:text-blue-600 uppercase tracking-tighter transition-colors">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+
+            <div aria-hidden="true" className="flex shrink-0 animate-scroll items-center gap-10 md:gap-20 pr-10 md:pr-20 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+              {technologies.map((tech, index) => (
+                <div key={`tech-2-${index}`} className="flex flex-col items-center gap-3 w-20 md:w-24">
+                  <img src={tech.logo} alt={tech.name} className="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 drop-shadow-sm cursor-pointer" />
+                  <span className="text-[10px] font-bold text-slate-400 hover:text-blue-600 uppercase tracking-tighter transition-colors">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="absolute top-0 right-0 w-20 md:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
           </div>
         </div>
       </div>

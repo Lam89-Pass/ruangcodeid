@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,42 +29,42 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-4" : "bg-transparent border-b border-transparent py-6"}`}>
+    <nav
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "bg-white border-b border-slate-200 shadow-md py-3" 
+          : "bg-white md:bg-transparent border-b border-transparent py-4 md:py-6"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <span className="text-2xl font-bold tracking-tight text-slate-900">
-            Ruang<span style={{ color: "#0275F6" }}>Code</span>.
-          </span>
+        <Link href="/" className="flex items-center transition-transform hover:scale-105 z-50">
+          <Image src="/logoRC.PNG" alt="Logo Ruang Code" width={200} height={90} className="object-contain" priority />
         </Link>
 
-        {/* Navlist */}
         <ul className="hidden md:flex items-center gap-8">
           <li>
-            <Link href="/" className={`text-sm transition-colors ${pathname === "/" ? "font-bold" : "font-medium text-slate-600 hover:text-slate-900"}`} style={pathname === "/" ? { color: "#0275F6" } : {}}>
+            <Link href="/" className={`text-sm transition-colors ${pathname === "/" ? "font-bold text-blue-600" : "font-medium text-slate-600 hover:text-blue-600"}`}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/#about" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+            <Link href="/#about" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
               About Us
             </Link>
           </li>
 
-          {/* Dropdown Layanan */}
           <li className="relative group" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
-            <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${pathname.startsWith("/layanan") ? "font-bold text-slate-900" : "text-slate-600 hover:text-slate-900"}`}>
+            <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${pathname.startsWith("/layanan") ? "font-bold text-slate-900" : "text-slate-600 hover:text-blue-600"}`}>
               Layanan
               <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
-            {/* Dropdown Menu */}
             <div className={`absolute left-0 mt-2 w-64 bg-white border border-slate-100 rounded-xl shadow-xl transition-all duration-200 ${isDropdownOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
               <div className="py-2">
                 {layananItems.map((item) => (
-                  <Link key={item.name} href={item.path} className="block px-5 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+                  <Link key={item.name} href={item.path} className="block px-5 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors">
                     {item.name}
                   </Link>
                 ))}
@@ -69,18 +73,17 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/testimoni" className={`text-sm transition-colors ${pathname === "/testimoni" ? "font-bold" : "font-medium text-slate-600 hover:text-slate-900"}`} style={pathname === "/testimoni" ? { color: "#0275F6" } : {}}>
+            <Link href="/#testimoni" className={`text-sm transition-colors ${pathname === "/#testimoni" ? "font-bold text-blue-600" : "font-medium text-slate-600 hover:text-blue-600"}`}>
               Testimoni
             </Link>
           </li>
           <li>
-            <Link href="/contact" className={`text-sm transition-colors ${pathname === "/contact" ? "font-bold" : "font-medium text-slate-600 hover:text-slate-900"}`} style={pathname === "/contact" ? { color: "#0275F6" } : {}}>
+            <Link href="/contact" className={`text-sm transition-colors ${pathname === "/contact" ? "font-bold text-blue-600" : "font-medium text-slate-600 hover:text-blue-600"}`}>
               Contact Us
             </Link>
           </li>
         </ul>
 
-        {/* Tombol CTA */}
         <div className="hidden md:block">
           <Link
             href="https://wa.me/628XXXXXXXXXX?text=Halo%20Ruang%20Code,%20saya%20ingin%20konsultasi%20website"
@@ -90,6 +93,56 @@ export default function Navbar() {
           >
             Cara Pesan Web
           </Link>
+        </div>
+
+        <button className="md:hidden flex items-center p-2 text-slate-600 hover:text-blue-600 transition-colors z-50" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMobileMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />}
+          </svg>
+        </button>
+      </div>
+
+      <div
+        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-2xl transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        <div className="flex flex-col px-6 py-6 gap-5 bg-white">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`text-base font-medium ${pathname === "/" ? "text-blue-600" : "text-slate-700"}`}>
+            Home
+          </Link>
+          <Link href="/#about" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-medium text-slate-700">
+            About Us
+          </Link>
+
+          <div className="flex flex-col">
+            <button onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)} className="flex items-center justify-between text-base font-medium text-slate-700 w-full text-left">
+              Layanan
+              <svg className={`w-5 h-5 transition-transform ${isMobileDropdownOpen ? "rotate-180 text-blue-600" : "text-slate-400"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div className={`flex flex-col gap-4 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${isMobileDropdownOpen ? "max-h-64 mt-4 opacity-100" : "max-h-0 opacity-0"}`}>
+              {layananItems.map((item) => (
+                <Link key={item.name} href={item.path} onClick={() => setIsMobileMenuOpen(false)} className="text-sm text-slate-500">
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link href="/#testimoni" onClick={() => setIsMobileMenuOpen(false)} className={`text-base font-medium ${pathname === "/#testimoni" ? "text-blue-600" : "text-slate-700"}`}>
+            Testimoni
+          </Link>
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`text-base font-medium ${pathname === "/contact" ? "text-blue-600" : "text-slate-700"}`}>
+            Contact Us
+          </Link>
+
+          <div className="pt-4 border-t border-slate-100">
+            <Link href="/cara-pesan"
+            target="_blank" onClick={() => setIsMobileMenuOpen(false)} className="flex justify-center w-full px-6 py-3.5 rounded-full text-sm font-bold bg-blue-600 text-white">
+              Cara Pesan Web
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

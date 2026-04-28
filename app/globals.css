@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -12,7 +10,6 @@ body {
   color: var(--foreground);
 }
 
-/* Biar scrollbar-nya tetap rapi dan elegan */
 ::-webkit-scrollbar {
   width: 8px;
 }

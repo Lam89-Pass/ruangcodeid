@@ -30,16 +30,13 @@ export default function PricingSection() {
   return (
     <section id="layanan" className="relative py-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header Section */}
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-block px-4 py-1.5 bg-blue-50/80 backdrop-blur-sm text-blue-600 font-bold text-xs tracking-widest uppercase rounded-full border border-blue-100">Daftar Harga</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
             Pilih Paket <span className="text-blue-600">Website Anda.</span>
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Investasi transparan untuk meningkatkan kredibilitas bisnis Anda secara digital. Semua paket sudah termasuk GRATIS Domain & Hosting tahun pertama.</p>
+          <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Pilihan paket pembuatan website sesuai dengan kebutuhan Anda.</p>
         </div>
 
-        {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
             <div
@@ -48,7 +45,6 @@ export default function PricingSection() {
                 pkg.isPopular ? "bg-slate-900 border-slate-800 text-white shadow-2xl shadow-blue-900/20" : "bg-white/60 backdrop-blur-md border-slate-200 text-slate-900"
               }`}
             >
-              {/* Tag Paling Populer */}
               {pkg.isPopular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-5 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase shadow-lg shadow-blue-600/30">Best Value</div>}
 
               <div className="mb-8">
@@ -60,7 +56,6 @@ export default function PricingSection() {
                 <p className={`mt-4 text-sm leading-relaxed ${pkg.isPopular ? "text-slate-400" : "text-slate-500"}`}>{pkg.description}</p>
               </div>
 
-              {/* List Fitur */}
               <ul className="flex-grow space-y-4 mb-10">
                 {pkg.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
@@ -74,7 +69,6 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              {/* Tombol Pilih Paket ke WA */}
               <Link
                 href={`https://wa.me/628XXXXXXXXXX?text=Halo%20Ruang%20Code,%20saya%20tertarik%20dengan%20Paket%20${pkg.name}`}
                 target="_blank"
@@ -88,7 +82,6 @@ export default function PricingSection() {
           ))}
         </div>
 
-        {/* Info Tambahan */}
         <div className="mt-16 text-center">
           <p className="text-sm text-slate-400 italic">*Harga perpanjangan tahun berikutnya jauh lebih murah karena hanya membayar biaya Domain & Hosting saja.</p>
         </div>
