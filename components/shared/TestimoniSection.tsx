@@ -1,8 +1,8 @@
 export default function TestimoniSection() {
   const testimonials = [
-    { name: "Budi Santoso", role: "Owner UMKM", content: "Pelayanan Ruang Code sangat profesional. Website saya jadi terlihat mewah." },
-    { name: "Siti Aminah", role: "Direktur Yayasan", content: "Pengerjaannya cepat dan hasilnya di luar ekspektasi. Sangat terbantu dengan garansinya." },
-    { name: "Andi Wijaya", role: "Founder Startup", content: "Desainnya modern dan tidak kaku sama sekali. SEO-nya juga terbukti jalan." },
+    { name: "Muhamad Nur Salam", role: "Founder Ruang Code", content: "Pelayanan Ruang Code sangat profesional. Website saya jadi terlihat mewah." },
+    { name: "Sandhika Galih", role: "Dosen UNPAS", content: "Pengerjaannya cepat dan hasilnya di luar ekspektasi. Sangat terbantu dengan garansinya." },
+    { name: "Nama Kepala Sekolah", role: "Kepala SMKN 1 Cidaun", content: "Desainnya modern dan tidak kaku sama sekali. SEO-nya juga terbukti jalan." },
   ];
 
   return (
@@ -15,7 +15,7 @@ export default function TestimoniSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testi, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <p className="text-slate-600 mb-6 italic">"{testi.content}"</p>
+              <p className="text-slate-600 mb-6 italic">{testi.content}</p>
               <div>
                 <h4 className="font-bold text-slate-900">{testi.name}</h4>
                 <p className="text-sm text-slate-500">{testi.role}</p>
