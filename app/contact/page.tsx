@@ -58,14 +58,15 @@ export default function ContactPage() {
   const closeModal = () => setModal({ ...modal, isOpen: false });
 
   return (
-    <main className="pt-32 pb-24 min-h-screen bg-slate-50/50">
+    <main className="pt-25 pb-24 min-h-screen bg-slate-50/50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-            Mari Bangun Sesuatu yang <br className="hidden md:block" />
-            <span className="text-blue-600">Luar Biasa Bersama.</span>
+            Siap Mulai <span className="text-blue-600">Website</span> Anda?
           </h1>
-          <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">Punya pertanyaan, butuh konsultasi, atau mau langsung mulai proyek? Jangan ragu buat ngobrol sama tim kita.</p>
+          <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
+            Punya pertanyaan atau ingin mulai membuat website? Kami siap membantu bisnis, perusahaan, organisasi, instansi, hingga UMKM Anda berkembang di dunia digital.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
@@ -83,7 +84,7 @@ export default function ContactPage() {
                   <p className="text-sm text-slate-600 leading-relaxed">
                     Bandung, Jawa Barat
                     <br />
-                    Indonesia (Buka: Senin - Sabtu)
+                    Indonesia (Buka Setiap Hari)
                   </p>
                 </div>
               </div>
@@ -103,7 +104,7 @@ export default function ContactPage() {
                   <h4 className="font-bold text-slate-900 mb-1">WhatsApp CS</h4>
                   <p className="text-sm text-slate-600 flex flex-col gap-1">
                     <a href="https://wa.me/6285624089970" target="_blank" className="hover:text-green-600 transition-colors font-medium">
-                      CS Admin: +62 856-2408-9970
+                      +62 856-2408-9970
                     </a>
                   </p>
                 </div>

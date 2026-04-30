@@ -4,9 +4,11 @@ import Link from "next/link";
 
 export default function AboutSection() {
   const benefits = [
-    { title: "Teknologi Modern", desc: "Menggunakan framework terbaru untuk performa maksimal." },
-    { title: "SEO Friendly", desc: "Website mudah ditemukan di halaman utama mesin pencari." },
-    { title: "Garansi Selamanya", desc: "Dukungan teknis penuh tanpa batas waktu tambahan." },
+    { title: "Biaya Fleksibel", desc: "Kami menawarkan pilihan harga yang dapat disesuaikan dengan kebutuhan dan skala bisnis Anda, tanpa mengorbankan kualitas." },
+    { title: "SEO Friendly", desc: "Website dioptimalkan agar mudah ditemukan di mesin pencari, membantu meningkatkan visibilitas dan potensi pelanggan." },
+    { title: "Pengerjaan Cepat & Tepat", desc: "Proses pengerjaan efisien dengan timeline yang jelas, sehingga website Anda bisa segera digunakan tanpa menunggu lama." },
+    { title: "Garansi Maintenance 1 Tahun", desc: "Nikmati layanan maintenance selama 1 tahun untuk memastikan website Anda tetap optimal, aman, dan terupdate." },
+    { title: "Gratis Hosting & Domain", desc: "Dapatkan hosting dan domain gratis di tahun pertama, sehingga Anda bisa langsung online tanpa biaya tambahan." },
   ];
 
   const technologies = [
@@ -47,26 +49,6 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-
-            <div className="space-y-4 pt-4 border-t border-slate-100">
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Konsultasi Gratis Sekarang:</p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="https://wa.me/6285624089970?text=Halo%20CS%20Alam%20Ruang%20Code"
-                  target="_blank"
-                  className="flex-1 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-sm text-center shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1 flex items-center justify-center"
-                >
-                  Chat CS Alam
-                </Link>
-                <Link
-                  href="https://wa.me/628YYYYYYYYYY?text=Halo%20CS%20Billy%20Ruang%20Code"
-                  target="_blank"
-                  className="flex-1 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-full font-bold text-sm text-center shadow-lg shadow-slate-900/20 transition-all transform hover:-translate-y-1 flex items-center justify-center"
-                >
-                  Chat CS Billy
-                </Link>
-              </div>
-            </div>
           </div>
 
           <div className="space-y-8 order-1 lg:order-2">
@@ -76,14 +58,20 @@ export default function AboutSection() {
                 <span className="text-blue-600">Kualitas Digital.</span>
               </h2>
               <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
-                <p>Ruang Code hadir untuk memberikan solusi digital yang tidak hanya indah dipandang, tapi juga bertenaga di balik layar. Kami adalah partner yang fokus pada kualitas kode, keamanan, dan desain eksklusif.</p>
-                <p>Kami memahami bahwa website adalah investasi jangka panjang bisnis Anda. Oleh karena itu, kami memberikan kualitas pengerjaan yang teliti dari sisi desain maupun optimasi mesin pencari.</p>
+                <p>
+                  Ruang Code hadir untuk menghadirkan solusi digital yang tidak hanya menarik secara visual, tetapi juga kuat dan optimal. Kami berkomitmen menjadi partner terpercaya yang mengutamakan kualitas, keamanan, dan desain yang
+                  eksklusif.
+                </p>
+                <p>
+                  Kami percaya bahwa website adalah investasi jangka panjang. Karena itu, setiap proyek kami kerjakan dengan teliti mulai dari tampilan hingga performa dan optimasi mesin pencari—agar memberikan hasil yang maksimal untuk
+                  bisnis Anda.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-16 border-t border-slate-200/60 relative">
+        <div className="pt-7 border-t border-slate-200/60 relative">
           <div className="text-center mb-10">
             <p className="text-sm font-bold text-slate-400 uppercase tracking-[0.2em]">Teknologi yang Kami Gunakan</p>
           </div>

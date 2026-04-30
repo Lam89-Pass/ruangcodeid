@@ -12,7 +12,10 @@ export default function Footer() {
             <Link href="/" className="inline-block transition-transform hover:scale-105">
               <Image src="/logoRC.PNG" alt="Logo Ruang Code" width={180} height={80} className="object-contain brightness-0 invert" priority />
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">Partner strategis Anda untuk solusi digital masa depan. Kami membangun website profesional dengan performa tinggi, desain eksklusif, dan garansi selamanya.</p>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+              Partner strategis Anda dalam solusi digital masa depan. Kami membantu bisnis, perusahaan, organisasi, instansi, hingga UMKM membangun website profesional dengan performa tinggi, desain eksklusif, dan kualitas yang
+              berkelanjutan.
+            </p>
 
             <div className="flex items-center gap-4 pt-2">
               <a
@@ -40,7 +43,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-6">
-            <h4 className="text-white font-bold tracking-widest uppercase text-sm">Tautan Cepat</h4>
+            <h4 className="text-white font-bold tracking-widest uppercase text-sm">Tautan Lainnya</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/" className="text-slate-400 hover:text-blue-500 text-sm transition-colors flex items-center gap-2">
@@ -88,24 +91,26 @@ export default function Footer() {
                     />
                   </svg>
                 </div>
-                <span className="text-slate-400 text-sm mt-1">
-                  CS Alam: +62 8XX-XXXX
-                  <br />
-                  CS Billy: +62 8YY-YYYY
-                </span>
+                <span className="text-slate-400 text-sm mt-1">+62 856-2408-9970</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="py-6 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-xs text-center md:text-left">&copy; {new Date().getFullYear()} Ruang Code. All rights reserved.</p>
+          <p className="text-slate-500 text-xs text-center md:text-left">
+            &copy; {new Date().getFullYear()}{" "}
+            <Link href="/" className="font-bold text-slate-400 hover:text-blue-500 transition-colors">
+              Ruang Code ID
+            </Link>{" "}
+            — Hak cipta dilindungi.
+          </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-slate-500 hover:text-white text-xs transition-colors">
-              Privacy Policy
+            <Link href="/privacy" className="text-slate-500 hover:text-white text-xs transition-colors">
+              Kebijakan Privasi
             </Link>
-            <Link href="#" className="text-slate-500 hover:text-white text-xs transition-colors">
-              Terms of Service
+            <Link href="/terms" className="text-slate-500 hover:text-white text-xs transition-colors">
+              Syarat dan Ketentuan
             </Link>
           </div>
         </div>

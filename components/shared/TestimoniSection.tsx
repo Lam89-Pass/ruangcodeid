@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 
 export default function TestimoniSection() {
   const originalTestimonials = [
-    { name: "Muhamad Nur Salam", role: "Founder Ruang Code", content: "Pelayanan Ruang Code sangat profesional. Website saya jadi terlihat mewah." },
-    { name: "Sandhika Galih", role: "Dosen UNPAS", content: "Pengerjaannya cepat dan hasilnya di luar ekspektasi. Sangat terbantu dengan garansinya." },
-    { name: "Nama Kepala Sekolah", role: "Kepala SMKN 1 Cidaun", content: "Desainnya modern dan tidak kaku sama sekali. SEO-nya juga terbukti jalan." },
+    { name: "Fokus pada Kualitas", role: "", content: "Setiap website dibangun dengan standar tinggi untuk memastikan performa dan keamanan." },
+    { name: "Proses yang Transparan", role: "", content: "Kami memberikan timeline yang jelas dan komunikasi yang terbuka di setiap tahap pengerjaan." },
+    { name: "Berorientasi pada Kebutuhan Klien", role: "", content: "Solusi yang kami berikan disesuaikan dengan kebutuhan bisnis, bukan sekadar template." },
   ];
 
   const testimonials = [...originalTestimonials, ...originalTestimonials];
@@ -48,16 +48,12 @@ export default function TestimoniSection() {
     <section id="testimoni" className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 mb-4 bg-blue-50 text-blue-600 font-bold text-xs tracking-widest uppercase rounded-full border border-blue-100">Ulasan Klien</div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Apa Kata Mereka?</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Mengapa Klien Memilih Kami?</h2>
         </div>
 
         <div className="relative">
           <div className="overflow-hidden px-2 py-4">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (isMobile ? 100 : 33.3333)}%)` }}
-            >
+            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * (isMobile ? 100 : 33.3333)}%)` }}>
               {testimonials.map((testi, index) => (
                 <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-4">
                   <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-full flex flex-col justify-between transition-transform hover:-translate-y-1 hover:shadow-md">

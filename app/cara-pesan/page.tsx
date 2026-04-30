@@ -10,26 +10,25 @@ export default function CaraPesanPage() {
     },
     {
       title: "Ngobrol Bareng Tim Kita",
-      desc: "Klik tombol WhatsApp buat ngobrol langsung sama CS kita (Mas Alam atau Mas Billy). Ceritain aja website seperti apa yang pengen kamu bikin, nanti kita kasih saran terbaiknya tanpa dipungut biaya.",
+      desc: "Klik tombol WhatsApp buat ngobrol langsung sama kita. Ceritain aja website seperti apa yang pengen kamu bikin, nanti kita kasih saran terbaiknya tanpa dipungut biaya.",
     },
     {
-      title: "Kesepakatan & Pembayaran DP",
+      title: "Kesepakatan & Pembayaran",
       desc: "Kalau udah ngerasa cocok sama harga dan fiturnya, kamu cukup bayar uang muka (DP) sebesar 50% dulu. Setelah DP masuk, pesanan kamu langsung masuk antrean buat mulai dikerjakan.",
     },
     {
       title: "Proses Bikin & Revisi",
-      desc: "Tim Ruang Code bakal mulai merancang website kamu. Nanti kita akan kasih lihat hasil sementaranya. Kalau ada bagian yang kurang sreg, kamu bisa minta revisi sampai bener-bener pas di hati.",
+      desc: "Tim Ruang Code bakal mulai merancang website kamu. Nanti kita akan kasih lihat hasil sementaranya. Kalau ada bagian yang kurang cocok, kamu bisa minta revisi sampai bener-bener pas di hati.",
     },
     {
       title: "Pelunasan & Website Online",
-      desc: "Kalau hasilnya udah 100% sesuai keinginanmu, tinggal selesaikan sisa pembayarannya. Website kamu siap online, dan semua akses (akun & password) bakal kita serahkan seutuhnya ke kamu!",
+      desc: "Kalau hasilnya udah 100% sesuai keinginanmu, tinggal selesaikan sisa pembayarannya. Website kamu siap online, dan semua akses bakal kita serahkan seutuhnya ke kamu!",
     },
   ];
 
   return (
-    <main className="pt-32 pb-24 min-h-screen bg-slate-50/50">
+    <main className="pt-10 pb-24 min-h-screen bg-slate-50/50">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Header Halaman */}
         <div className="text-center mb-20 space-y-4">
           <div className="inline-block px-5 py-2 bg-blue-100/50 text-blue-700 font-bold text-xs tracking-widest uppercase rounded-full border border-blue-200">Alur Pemesanan</div>
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
@@ -39,22 +38,16 @@ export default function CaraPesanPage() {
           <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">Gak perlu bingung soal teknis. Ikuti 5 langkah santai ini, dan biarkan tim Ruang Code yang beresin semuanya buat kamu.</p>
         </div>
 
-        {/* Layout Timeline Elegan */}
         <div className="relative max-w-4xl mx-auto py-10">
-          {/* Garis Tengah Vertikal (Desktop di tengah, Mobile di kiri) */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-blue-200/50 -translate-x-1/2 rounded-full"></div>
 
           {steps.map((step, index) => (
             <div key={index} className={`relative flex items-center justify-between md:justify-normal mb-16 last:mb-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-              {/* Lingkaran Nomor (Node) */}
               <div className="absolute left-8 md:left-1/2 w-14 h-14 bg-blue-600 rounded-full border-4 border-slate-50 shadow-lg shadow-blue-600/30 flex items-center justify-center -translate-x-1/2 z-10">
                 <span className="text-white font-black text-xl">{index + 1}</span>
               </div>
 
-              {/* Spacer buat Desktop supaya letaknya selang-seling */}
               <div className="hidden md:block w-1/2"></div>
-
-              {/* Kartu Konten */}
               <div className={`w-full ml-20 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pl-16" : "md:pr-16"}`}>
                 <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:-translate-y-2 transition-transform duration-300">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">{step.title}</h3>
@@ -65,9 +58,7 @@ export default function CaraPesanPage() {
           ))}
         </div>
 
-        {/* CTA Akhir yang Friendly */}
         <div className="mt-24 max-w-3xl mx-auto bg-slate-900 p-10 md:p-14 rounded-[3rem] text-center shadow-2xl relative overflow-hidden">
-          {/* Efek grid tipis di background CTA */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
           <div className="relative z-10 space-y-6">

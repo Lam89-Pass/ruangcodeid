@@ -10,7 +10,7 @@ export default function HeroSection() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="w-full lg:w-1/2 space-y-8 text-center lg:text-left">
             <div className="space-y-4">
-              <span className="inline-block px-4 py-1.5 bg-blue-50/80 backdrop-blur-sm text-blue-600 font-bold text-xs tracking-widest uppercase rounded-full border border-blue-100">#1 Web Solution Partner</span>
+              <span className="inline-block px-4 py-1.5 bg-blue-50/80 backdrop-blur-sm text-blue-600 font-bold text-xs tracking-widest uppercase rounded-full border border-blue-100">Web Solution Digital</span>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
                 Jasa Pembuatan <br />
@@ -19,7 +19,7 @@ export default function HeroSection() {
 
               <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Spesialis Jasa Pembuatan Website kebutuhan Bisnis, Organisasi, Instansi, UMKM.
-                <span className="block font-semibold text-slate-800 mt-2">Gratis Hosting & Domain + Garansi Selamanya.</span>
+                <span className="block font-semibold text-slate-800 mt-2">Gratis Hosting & Domain</span>
               </p>
             </div>
 
