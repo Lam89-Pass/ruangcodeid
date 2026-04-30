@@ -52,7 +52,7 @@ export default function AboutSection() {
               <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Konsultasi Gratis Sekarang:</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  href="https://wa.me/628XXXXXXXXXX?text=Halo%20CS%20Alam%20Ruang%20Code"
+                  href="https://wa.me/6285624089970?text=Halo%20CS%20Alam%20Ruang%20Code"
                   target="_blank"
                   className="flex-1 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-sm text-center shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1 flex items-center justify-center"
                 >

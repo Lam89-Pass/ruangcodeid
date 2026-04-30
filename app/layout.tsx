@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import WhatsAppWidget from "@/components/shared/WhatsAppWidget";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -8,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakart
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Ruang Code | Jasa Pembuatan Website Profesional",
+  title: "Jasa Pembuatan Website Profesional - Ruang Code ID",
   description: "Spesialis jasa pembuatan website untuk bisnis, organisasi, UMKM, dan instansi.",
 };
 
@@ -23,6 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+
+        <WhatsAppWidget />
       </body>
     </html>
   );

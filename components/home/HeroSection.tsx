@@ -25,7 +25,7 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center lg:justify-start">
               <Link
-                href="https://wa.me/628XXXXXXXXXX?text=Halo%20Ruang%20Code,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+                href="https://wa.me/6285624089970?text=Halo%20Ruang%20Code,%20saya%20ingin%20konsultasi%20pembuatan%20website"
                 target="_blank"
                 className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg shadow-xl shadow-blue-600/20 transition-all transform hover:-translate-y-1 text-center"
               >

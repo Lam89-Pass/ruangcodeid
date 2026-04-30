@@ -70,7 +70,7 @@ export default function PricingSection() {
               </ul>
 
               <Link
-                href={`https://wa.me/628XXXXXXXXXX?text=Halo%20Ruang%20Code,%20saya%20tertarik%20dengan%20Paket%20${pkg.name}`}
+                href={`https://wa.me/6285624089970?text=Halo%20Ruang%20Code,%20saya%20tertarik%20dengan%20Paket%20${pkg.name}`}
                 target="_blank"
                 className={`w-full py-4 rounded-2xl font-black text-xs tracking-widest text-center transition-all uppercase ${
                   pkg.isPopular ? "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30" : "bg-slate-900 hover:bg-blue-600 text-white"
