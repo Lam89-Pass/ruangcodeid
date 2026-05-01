@@ -7,7 +7,7 @@ export default function AboutSection() {
     { title: "Biaya Fleksibel", desc: "Kami menawarkan pilihan harga yang dapat disesuaikan dengan kebutuhan dan skala bisnis Anda, tanpa mengorbankan kualitas." },
     { title: "SEO Friendly", desc: "Website dioptimalkan agar mudah ditemukan di mesin pencari, membantu meningkatkan visibilitas dan potensi pelanggan." },
     { title: "Pengerjaan Cepat & Tepat", desc: "Proses pengerjaan efisien dengan timeline yang jelas, sehingga website Anda bisa segera digunakan tanpa menunggu lama." },
-    { title: "Garansi Maintenance 1 Tahun", desc: "Nikmati layanan maintenance selama 1 tahun untuk memastikan website Anda tetap optimal, aman, dan terupdate." },
+    { title: "Garansi Maintenance", desc: "Nikmati layanan maintenance untuk memastikan website Anda tetap optimal, aman, dan terupdate." },
     { title: "Gratis Hosting & Domain", desc: "Dapatkan hosting dan domain gratis di tahun pertama, sehingga Anda bisa langsung online tanpa biaya tambahan." },
   ];
 

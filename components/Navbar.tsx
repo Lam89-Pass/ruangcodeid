@@ -61,7 +61,6 @@ export default function Navbar() {
   const layananItems = [
     { name: "Jasa Pembuatan Website", path: "/layanan/pembuatan-website" },
     { name: "Redesign Website", path: "/layanan/redesign-website" },
-    { name: "Jasa Website Custome", path: "/layanan/website-custom" },
     { name: "Desain", path: "/layanan/desain" },
   ];
 

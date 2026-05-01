@@ -45,7 +45,7 @@ export default function TestimoniSection() {
   if (!mounted) return null;
 
   return (
-    <section id="testimoni" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="testimoni" className="py-24 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Mengapa Klien Memilih Kami?</h2>

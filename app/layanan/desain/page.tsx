@@ -1,33 +1,67 @@
-"use client";
+import ServiceCatalog from "@/components/services/ServiceCatalog";
+import PromoBanner from "@/components/shared/PromoBanner";
+import { ServiceItem } from "@/hooks/useServiceCatalog";
 
-import Link from "next/link";
+const DATA_DESAIN: ServiceItem[] = [
+  {
+    id: 1,
+    category: "Branding & Logo",
+    name: "Logo Basic",
+    originalPrice: "xxx.xxx.xxx",
+    price: "Mulai dari 30.000",
+    priceNum: 350000,
+    isPromo: false,
+    desc: "Desain logo profesional yang simpel untuk UMKM dan bisnis yang baru merintis.",
+    features: ["Revisi 3x", "File Master", "Format PNG/JPG", "Pengerjaan Mulai dari 1 Hari", "Konsultasi Gratis"],
+  },
+  {
+    id: 2,
+    category: "UI/UX Design",
+    name: "UI/UX Website",
+    originalPrice: "xxx.xxx.xxx",
+    price: "Mulai dari 1.899.000",
+    priceNum: 1800000,
+    isPromo: false,
+    desc: "Desain antarmuka website (tanpa coding) yang menarik, modern, dan mudah digunakan.",
+    features: ["Wireframing", "Desain UI (Figma)", "Interactive Prototype", "Asset Export Ready", "Konsultasi Gratis"],
+  },
+  {
+    id: 3,
+    category: "Sosial Media",
+    name: "Feed Instagram",
+    originalPrice: "xxx.xxx.xxx",
+    price: "Mulai dari 50.000",
+    priceNum: 900000,
+    isPromo: false,
+    desc: "Desain konten feed Instagram bulanan yang estetik, rapi, dan meningkatkan engagement.",
+    features: ["Desain Feed", "Ide Caption & Hashtag", "Grid Planning", "Revisi 3x", "Konsultasi Gratis"],
+  },
+  {
+    id: 4,
+    category: "Desain Custom",
+    name: "Desain Custom",
+    originalPrice: "xxx.xxx",
+    price: "Hubungi Kami",
+    priceNum: 750000,
+    isPromo: false,
+    desc: "Konsultasi desain anda dengan kami, desain banner, spanduk, logo, stiker??",
+    features: ["Revisi Fleksibel","Harga Khusus", "Konsultasi Gratis"],
+  },
+];
+
+const CATEGORIES = ["Semua Kategori", "Branding & Logo", "UI/UX Design", "Sosial Media", "Desain Grafis"];
 
 export default function DesainPage() {
   return (
-    <main className="pt-32 pb-24 min-h-screen">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-          Jasa <span className="text-blue-600">Desain Visual</span>
-        </h1>
-        <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-12">Gak butuh coding? Cuma mau desain tampilannya aja di Figma? Atau butuh logo dan aset banner? Kami siap bantu.</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100 text-left">
-            <h4 className="font-bold text-lg mb-1">Desain UI/UX (Figma)</h4>
-            <p className="text-blue-600 font-black text-2xl mb-4">Rp 500rb /halaman</p>
-            <Link href="https://wa.me/628XXXXXXXXXX" className="text-sm font-bold text-slate-500 hover:text-blue-600">
-              Order Desain →
-            </Link>
-          </div>
-          <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100 text-left">
-            <h4 className="font-bold text-lg mb-1">Logo & Branding</h4>
-            <p className="text-blue-600 font-black text-2xl mb-4">Mulai Rp 300rb</p>
-            <Link href="https://wa.me/628XXXXXXXXXX" className="text-sm font-bold text-slate-500 hover:text-blue-600">
-              Order Logo →
-            </Link>
-          </div>
-        </div>
-      </div>
-    </main>
+    <>
+      <ServiceCatalog
+        title='Layanan <span className="text-blue-400">Desain Kreatif</span>'
+        description="Mulai dari desain logo, UI/UX website, hingga konten sosial media."
+        bannerImage="/layanan_desain.png"
+        data={DATA_DESAIN}
+        categories={CATEGORIES}
+      />
+      <PromoBanner />
+    </>
   );
 }

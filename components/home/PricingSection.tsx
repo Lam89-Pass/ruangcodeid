@@ -5,24 +5,50 @@ import Link from "next/link";
 export default function PricingSection() {
   const packages = [
     {
-      name: "Basic",
-      price: "1.5JT",
+      name: "Hemat",
+      originalPrice: "1.500.000",
+      price: "899.000",
       description: "Solusi hemat untuk landing page, profil personal, atau portofolio sederhana.",
-      features: ["Gratis Domain (.com/.id)", "Hosting 1GB High Speed", "Desain Responsif (Max 5 Hal)", "Integrasi WhatsApp Chat", "Bantuan Upload Konten", "Revisi 2x"],
+      features: [
+        "Garansi Maintenance 1 Bulan",
+        "Gratis Domain 1 Tahun",
+        "Hosting 1GB High Speed",
+        "Desain Responsif",
+        "SEO Basic Setup",
+        "Maximal 5 Halaman",
+        "Revisi hingga 2x",
+        "Tanpa Akses Admin Panel",
+        "Integrasi WhatsApp",
+        "Belum termasuk fitur custom",
+        "Gratis Konsultasi",
+      ],
       isPopular: false,
     },
     {
-      name: "Profesional",
-      price: "3.5JT",
+      name: "Professional",
+      originalPrice: "3.500.000",
+      price: "2.899.000",
       description: "Paket lengkap paling diminati untuk profil perusahaan, instansi, atau bisnis UMKM.",
-      features: ["Semua Fitur Paket Basic", "Hosting Unlimited SSD", "Desain Premium (Max 10 Hal)", "Optimasi SEO Dasar", "Integrasi Sosial Media", "Email Bisnis Profesional", "Garansi Maintenance Selamanya", "CMS"],
+      features: [
+        "Garansi Maintenance 1 Bulan",
+        "Gratis Domain 1 Tahun",
+        "Hosting Unlimited",
+        "Desain Responsif",
+        "SEO On-Page Optimization",
+        "Maximal 10 Halaman",
+        "Revisi hingga 5x",
+        "Full Akses Admin Panel",
+        "Integrasi WhatsApp",
+        "Gratis Konsultasi",
+      ],
       isPopular: true,
     },
     {
       name: "Custom",
+      originalPrice: null,
       price: "Hubungi Kami",
       description: "Sistem web khusus dengan fitur, integrasi API, dan tampilan sesuai request eksklusif.",
-      features: ["Desain UI/UX Eksklusif", "Sistem Database Kompleks", "Integrasi API Pihak Ketiga", "Dashboard Admin Khusus", "Optimasi Kecepatan Lanjutan", "Prioritas Support 24/7"],
+      features: ["Garansi Maintenance 1 Bulan", "Gratis Domain 1 Tahun", "Kebutuhan & Fitur 100% Custom", "Desain Responsif", "Revisi Fleksibel", "Gratis Konsultasi"],
       isPopular: false,
     },
   ];
@@ -32,9 +58,11 @@ export default function PricingSection() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-            Pilih Paket <span className="text-blue-600">Website Anda.</span>
+            Pilih Paket <span className="text-blue-600">Website Anda</span>
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Pilihan paket pembuatan website sesuai dengan kebutuhan Anda.</p>
+          <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">
+            Mumpung lagi ada <span className="font-bold text-red-500">Harga Spesial</span>, amankan paket pilihanmu sekarang!
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -49,10 +77,21 @@ export default function PricingSection() {
 
               <div className="mb-8">
                 <h3 className={`text-lg font-black mb-2 uppercase tracking-widest ${pkg.isPopular ? "text-blue-400" : "text-blue-600"}`}>{pkg.name}</h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl md:text-5xl font-black tracking-tighter">{pkg.price}</span>
-                  {pkg.name !== "Custom" && <span className={`text-sm font-bold ${pkg.isPopular ? "text-slate-400" : "text-slate-500"}`}>/proyek</span>}
+
+                <div className="flex flex-col gap-1">
+                  {pkg.originalPrice && (
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className={`text-lg font-bold line-through decoration-red-500/80 ${pkg.isPopular ? "text-slate-500" : "text-slate-400"}`}>{pkg.originalPrice}</span>
+                      <span className="bg-red-500 text-white px-2 py-0.5 rounded text-[10px] font-black animate-pulse tracking-widest uppercase">PROMO</span>
+                    </div>
+                  )}
+
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl md:text-5xl font-black tracking-tighter">{pkg.price}</span>
+                    {pkg.name !== "Custom" && <span className={`text-sm font-bold ${pkg.isPopular ? "text-slate-400" : "text-slate-500"}`}></span>}
+                  </div>
                 </div>
+
                 <p className={`mt-4 text-sm leading-relaxed ${pkg.isPopular ? "text-slate-400" : "text-slate-500"}`}>{pkg.description}</p>
               </div>
 
@@ -70,10 +109,10 @@ export default function PricingSection() {
               </ul>
 
               <Link
-                href={`https://wa.me/6285624089970?text=Halo%20Ruang%20Code,%20saya%20tertarik%20dengan%20Paket%20${pkg.name}`}
+                href={`https://wa.me/6285624089970?text=Halo%20Ruang%20Code,%20saya%20tertarik%20dengan%20Paket%20${pkg.name}${pkg.originalPrice ? "%20yang%20lagi%20diskon" : ""}`}
                 target="_blank"
                 className={`w-full py-4 rounded-2xl font-black text-xs tracking-widest text-center transition-all uppercase ${
-                  pkg.isPopular ? "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30" : "bg-slate-900 hover:bg-blue-600 text-white"
+                  pkg.isPopular ? "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30" : "bg-slate-900 hover:bg-slate-800 text-white"
                 }`}
               >
                 Pilih Paket

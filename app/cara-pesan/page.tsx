@@ -72,7 +72,7 @@ export default function CaraPesanPage() {
                 Cek Paket Harga
               </Link>
               <Link
-                href="https://wa.me/6285624089970?text=Halo%20Mas%20Alam/Billy,%20saya%20udah%20baca%20cara%20pesannya%20dan%20ingin%20tanya-tanya%20dulu%20nih."
+                href="https://wa.me/6285624089970?text=Halo Ruang Code, saya mau konsultasi pembuatan website nih."
                 target="_blank"
                 className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
               >
