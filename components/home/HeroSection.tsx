@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -37,15 +37,10 @@ export default function HeroSection() {
           <div className="hidden lg:block lg:w-1/2 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,#dbeafe,transparent_60%)] -z-10"></div>
 
-            <div className="relative group shadow-2xl rounded-2xl border-6 border-white bg-slate-100/50 aspect-[4/3] overflow-hidden group transition-all duration-500 hover:scale-[1.01]">
-              <Image
-                src="/banner_ruangcode.png" 
-                alt="Ruang Code Hero Banner"
-                width={650}
-                height={500}
-                priority
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+            <div className="relative group shadow-2xl rounded-2xl border-6 border-white bg-slate-100/50 aspect-[4.2/3] overflow-hidden group transition-all duration-500 hover:scale-[1.01]">
+              <a href="/layanan/pembuatan-website">
+                <Image src="/banner_ruangcode.png" alt="Ruang Code Hero Banner" width={650} height={500} priority className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </a>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function PricingSection() {
       name: "Profesional",
       price: "3.5JT",
       description: "Paket lengkap paling diminati untuk profil perusahaan, instansi, atau bisnis UMKM.",
-      features: ["Semua Fitur Paket Basic", "Hosting Unlimited SSD", "Desain Premium (Max 10 Hal)", "Optimasi SEO Dasar", "Integrasi Sosial Media", "Email Bisnis Profesional", "Garansi Maintenance Selamanya"],
+      features: ["Semua Fitur Paket Basic", "Hosting Unlimited SSD", "Desain Premium (Max 10 Hal)", "Optimasi SEO Dasar", "Integrasi Sosial Media", "Email Bisnis Profesional", "Garansi Maintenance Selamanya", "CMS"],
       isPopular: true,
     },
     {

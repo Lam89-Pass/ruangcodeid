@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function RedesignWebsitePage() {
   return (
-    <main className="pt-32 pb-24 min-h-screen bg-white">
+    <main className="pt-32 pb-24 min-h-screen">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
           Jasa <span className="text-blue-600">Redesign Website</span>
